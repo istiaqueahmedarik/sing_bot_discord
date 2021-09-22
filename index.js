@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
+const keepAlive = require('./server')
+
  
 const { YTSearcher } = require('ytsearcher');
 
@@ -115,5 +117,6 @@ client.on("message", async(message) => {
         serverQueue.connection.dispatcher.end();
     }
 })
- 
+keepAlive();
+
 client.login(process.env.DISCORD)
